@@ -3,6 +3,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+  --primary-light-hsl: 200, 100%, 91%;
+  --primary-hsl: 200, 100%, 50%;
+  --primary-dark-hsl: 200, 100%, 6%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,8 +18,27 @@ body {
   background-image: url(./pexels-pixabay-221395.jpg);
   height: 100vh;
   width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  --color: hsl(var(--primary-dark-hsl), .7);
+  background-color: var(--color);
+  box-shadow: 0 0 15px 0 var(--color);
+  padding: 40px 30px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 20px;
 }
 
 .login-title {
   margin: 0;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: normal;
 }
