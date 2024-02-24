@@ -4,12 +4,19 @@
   box-sizing: border-box;
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: flex-start;
+}
+
 .card {
+  --padding: 1rem;
   background-color: white;
-  padding: 1rem;
   border: 1px solid #777;
   border-radius: .25rem;
-  max-width: 300px;
+  overflow: hidden;
 }
 
 .card.card-shadow {
@@ -18,16 +25,40 @@
 }
 
 .card-header {
+  padding: var(--padding);
+  padding-bottom: 0;
   font-size: 1.5rem;
   margin-bottom: .5rem;
 }
 
+.card-header.card-image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card-header.card-image > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+  transition: 200ms transform ease-in-out;
+}
+
+.card:hover > .card-header.card-image > img {
+  transform: scale(1.025);
+}
+
 .card-body {
   font-size: .9rem;
+  padding: 0 var(--padding);
 }
 
 .card-footer {
   margin-top: 1rem;
+  padding: var(--padding);
+  padding-top: 0;
 }
 
 .btn {
