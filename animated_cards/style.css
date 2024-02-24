@@ -9,6 +9,12 @@
   padding: 1rem;
   border: 1px solid #777;
   border-radius: .25rem;
+  max-width: 300px;
+}
+
+.card.card-shadow {
+  border: none !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card-header {
