@@ -76,3 +76,35 @@ button {
 .btn.btn-background-slide:focus {
   color: #fff;
 }
+
+.btn.btn-background-circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  transform: scale(1.5);
+  transition: transform, 500ms ease-in-out;
+  /* transform-origin: center; */
+}
+
+.btn.btn-background-circle:hover::before,
+.btn.btn-background-circle:focus::before {
+  transform: scale(0);
+}
+
+.btn.btn-background-circle {
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--accent-color);
+  transition: color 500ms ease-in-out;
+}
+
+.btn.btn-background-circle:hover,
+.btn.btn-background-circle:focus {
+  color: #fff;
+}
