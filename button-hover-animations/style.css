@@ -90,7 +90,7 @@ button {
   border-radius: 50%;
   transform: scale(1.5);
   transition: transform, 500ms ease-in-out;
-  /* transform-origin: center; */
+  transform-origin: center;
 }
 
 .btn.btn-background-circle:hover::before,
