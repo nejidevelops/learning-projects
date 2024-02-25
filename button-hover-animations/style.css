@@ -25,6 +25,7 @@ button {
 
   --background-color: #e3e3e3;
   --border-size: 2px;
+  --accent-color: #0af;
 }
 
 .btn.btn-border-pop::before {
@@ -47,4 +48,31 @@ button {
   right: calc(var(--border-size) * -2);
 }
 
+.btn.btn-background-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--accent-color);
+  transition: transform, 500ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
 
+.btn.btn-background-slide {
+  transition: color 300ms ease-in-out;
+  z-index: 1;
+}
+
+.btn.btn-background-slide:hover::before,
+.btn.btn-background-slide:focus::before {
+  transform: scaleX(1);
+}
+
+.btn.btn-background-slide:hover,
+.btn.btn-background-slide:focus {
+  color: #fff;
+}
