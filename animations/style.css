@@ -33,7 +33,7 @@ section {
   width: 200px;
   height: 200px;
   border-radius: 200px;
-  border: 20px solid #fff;
+  border: 20px solid white;
   border-bottom-color: transparent;
   animation: spinn 3s linear infinite;
 }
@@ -42,21 +42,19 @@ section {
   0% {
     transform: rotate(0deg);
     border-color: red;
+    border-bottom-color: transparent;
   }
-  24% {
-    border-color: red;
-  }
-  25% {
+  33% {
     border-color: yellow;
+    border-bottom-color: transparent;
   }
-  49% {
-    border-color: yellow;
-  }
-  50% {
+  66% {
     border-color: blue;
+    border-bottom-color: transparent;
   }
   100% {
     transform: rotate(360deg);
-    border-color: blue;
+    border-color: red;
+    border-bottom-color: transparent;
   }
 }
