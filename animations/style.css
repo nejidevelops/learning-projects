@@ -1,0 +1,62 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  background-color: #131217;
+  gap: 2rem;
+}
+
+section {
+  height: auto;
+}
+
+.spinner {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  border: 20px solid #fff;
+  border-bottom-color: transparent;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  border: 20px solid #fff;
+  border-bottom-color: transparent;
+  animation: spinn 3s linear infinite;
+}
+
+@keyframes spinn {
+  0% {
+    transform: rotate(0deg);
+    border-color: red;
+  }
+  24% {
+    border-color: red;
+  }
+  25% {
+    border-color: yellow;
+  }
+  49% {
+    border-color: yellow;
+  }
+  50% {
+    border-color: blue;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: blue;
+  }
+}
