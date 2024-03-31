@@ -47,6 +47,7 @@ section {
   33% {
     border-color: yellow;
     border-bottom-color: transparent;
+    width: 100px;
   }
   66% {
     border-color: blue;
