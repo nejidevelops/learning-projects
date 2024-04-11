@@ -1,0 +1,287 @@
+ul[class] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul:not([class]) {
+  font-size: 1rem;
+}
+
+.primary-nav a:not([class]) {
+  color: var(--clr-neutral-100);
+  text-decoration: none;
+}
+
+.showcase-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.showcase-list li:nth-child(n + 7):nth-child(-n + 9) {
+  grid-column: span 2;
+}
+
+/* .showcase-list:hover img {
+  opacity: .5;
+}
+
+.showcase-list img:hover {
+  opacity: 1;
+} */
+
+/* .showcase-list:has(img:hover) img:not(:hover) {
+  opacity: .5;
+} */
+
+.showcase-list li:hover {
+  outline: 5px solid lime;
+}
+
+.showcase-list li:hover + li,
+.showcase-list li:has(+ :hover) {
+  outline: 5px solid green;
+}
+
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--clr-neutral-900);
+  background: var(--clr-primary-300);
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+
+  .inverse & {
+    color: var(--clr-neutral-100);
+    background: var(--clr-primary-500);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--clr-neutral-100);
+      background: var(--clr-accent-500);
+    }
+  }
+}
+
+.button:hover,
+.button:focus-visible {
+  color: var(--clr-neutral-100);
+  background: var(--clr-primary-500);
+}
+
+.page-header {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.primary-nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.showcase-list img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.inverse {
+  background: var(--clr-neutral-100);
+  color: var(--clr-neutral-900);
+}
+
+@layer not-demo-related {
+  :root {
+    --content-max-width: 75ch;
+
+    --font-family: system-ui;
+
+    --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 0.98rem);
+    --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+    --fs-500: clamp(1.35rem, calc(1.21rem + 0.69vw), 1.75rem);
+    --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+    --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+    --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+    --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+
+    --clr-primary-700: hsl(219, 76%, 75%);
+    --clr-primary-600: hsl(219, 76%, 50%);
+    --clr-primary-500: hsl(219, 76%, 35%);
+    --clr-primary-400: hsl(219, 76%, 25%);
+    --clr-primary-300: hsl(219, 76%, 15%);
+
+    --clr-secondary-700: hsl(269, 75%, 75%);
+    --clr-secondary-600: hsl(269, 75%, 50%);
+    --clr-secondary-500: hsl(269, 75%, 35%);
+    --clr-secondary-400: hsl(269, 75%, 20%);
+    --clr-secondary-300: hsl(269, 75%, 15%);
+
+    --clr-accent-700: hsl(358, 72%, 75%);
+    --clr-accent-600: hsl(358, 72%, 50%);
+    --clr-accent-500: hsl(358, 72%, 35%);
+    --clr-accent-400: hsl(358, 72%, 20%);
+    --clr-accent-300: hsl(358, 72%, 15%);
+
+    --clr-neutral-900: hsl(219, 15%, 90%);
+    --clr-neutral-700: hsl(219, 15%, 75%);
+    --clr-neutral-600: hsl(219, 15%, 50%);
+    --clr-neutral-500: hsl(219, 15%, 35%);
+    --clr-neutral-400: hsl(219, 15%, 20%);
+    --clr-neutral-300: hsl(219, 15%, 15%);
+    --clr-neutral-100: hsl(219, 15%, 5%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --clr-primary-300: hsl(219, 76%, 75%);
+      --clr-primary-400: hsl(219, 76%, 50%);
+      --clr-primary-500: hsl(219, 76%, 35%);
+      --clr-primary-600: hsl(219, 76%, 25%);
+      --clr-primary-700: hsl(219, 76%, 15%);
+
+      --clr-secondary-300: hsl(269, 75%, 75%);
+      --clr-secondary-400: hsl(269, 75%, 50%);
+      --clr-secondary-500: hsl(269, 75%, 35%);
+      --clr-secondary-600: hsl(269, 75%, 20%);
+      --clr-secondary-700: hsl(269, 75%, 15%);
+
+      --clr-accent-300: hsl(358, 72%, 75%);
+      --clr-accent-400: hsl(358, 72%, 50%);
+      --clr-accent-500: hsl(358, 72%, 35%);
+      --clr-accent-600: hsl(358, 72%, 20%);
+      --clr-accent-700: hsl(358, 72%, 15%);
+
+      --clr-neutral-100: hsl(219, 15%, 90%);
+      --clr-neutral-300: hsl(219, 15%, 75%);
+      --clr-neutral-400: hsl(219, 15%, 50%);
+      --clr-neutral-500: hsl(219, 15%, 35%);
+      --clr-neutral-600: hsl(219, 15%, 20%);
+      --clr-neutral-700: hsl(219, 15%, 15%);
+      --clr-neutral-900: hsl(219, 15%, 5%);
+    }
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark light;
+  }
+
+  body {
+    margin: 0;
+    color: var(--clr-neutral-300);
+    font-family: var(--font-family);
+    font-size: var(--fs-400);
+    line-height: 1.6;
+    padding-block: 6rem;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--clr-neutral-100);
+  }
+
+  h1 {
+    font-size: var(--fs-900);
+    line-height: 1.05;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-wrap: balance;
+  }
+
+  p {
+    max-width: 55ch;
+    text-wrap: pretty;
+  }
+
+  .wrapper {
+    width: min(var(--content-max-width), 100% - 2rem);
+    margin-inline: auto;
+  }
+
+  .section-title {
+    font-size: var(--fs-800);
+    line-height: 1.1;
+  }
+
+  .flow > * + * {
+    margin-top: 1em;
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns:
+      [full-width-start] minmax(1rem, 1fr)
+      [content-start sidebar-start main-start] min(
+        100% - 2rem,
+        var(--content-max-width)
+      )
+      [content-end sidebar-end main-end] minmax(1rem, 1fr) [full-width-end];
+  }
+
+  :where(.content-grid, .full-width) > * {
+    margin: 0;
+  }
+
+  @media (min-width: 900px) {
+    .content-grid {
+      grid-template-columns:
+        [full-width-start] minmax(1rem, 1fr)
+        [content-start sidebar-start] min(
+          33% - 2rem,
+          var(--content-max-width) / 3
+        )
+        [sidebar-end main-start] min(33% - 2rem, var(--content-max-width) / 3)
+        min(33% - 2rem, var(--content-max-width) / 3)
+        [content-end main-end] minmax(1rem, 1fr) [full-width-end];
+    }
+  }
+
+  .content-grid > *,
+  .full-width > * {
+    grid-column: content;
+  }
+
+  .content-grid > .full-width {
+    grid-column: full-width;
+
+    display: grid;
+    grid-template-columns: inherit;
+  }
+
+  .card {
+    width: fit-content;
+    padding: 1rem;
+    border: 1px solid var(--clr-neutral-700);
+    border-radius: 0.25rem;
+    display: grid;
+    gap: 1rem;
+    place-items: start;
+
+    > * {
+      margin: 0;
+    }
+  }
+}
