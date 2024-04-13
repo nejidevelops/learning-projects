@@ -14,7 +14,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: var(--_headerWidth, auto);
 
   color: var(--_textColorStart);
   background-color: var(--_surfaceColorStart);
